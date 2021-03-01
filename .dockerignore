@@ -109,7 +109,6 @@ celerybeat.pid
 # Environments
 .env
 .venv
-.env/
 venv/
 .env/
 env.bak/
@@ -141,3 +140,12 @@ cython_debug/
 
 # IDE settings
 .idea
+
+# Git repository
+.git
+.gitignore
+
+# Docker
+.dockerignore
+Dockerfile
+Dockerfile.prod
