@@ -17,4 +17,4 @@ RUN pipenv install --system
 
 COPY . .
 
-ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
+ENTRYPOINT ["./entrypoint.sh"]
