@@ -6,7 +6,8 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONBUFFERED 1
 
 RUN apt-get update -y && \
-    apt-get install -y netcat
+    apt-get install -y netcat && \
+    apt-get clean
 
 RUN pip install --upgrade pip
 RUN pip install pipenv
