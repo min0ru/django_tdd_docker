@@ -9,6 +9,8 @@ djangorestframework = "*"
 psycopg2-binary = "*"
 
 [dev-packages]
+pytest = "*"
+pytest-django = "*"
 
 [requires]
 python_version = "3.9.1"
