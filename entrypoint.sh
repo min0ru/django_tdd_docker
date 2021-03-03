@@ -13,5 +13,6 @@ fi
 
 python manage.py flush --no-input
 python manage.py migrate --no-input
+python manage.py loaddata initial_movies
 
 exec "$@"
