@@ -15,6 +15,9 @@ whitenoise = "*"
 pytest = "*"
 pytest-django = "*"
 pytest-cov = "*"
+black = "==20.8b1"
+isort = "*"
+flake8 = "*"
 
 [requires]
 python_version = "3.9.1"

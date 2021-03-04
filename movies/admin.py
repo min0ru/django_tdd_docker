@@ -8,8 +8,9 @@ from .models import CustomUser, Movie
 class UserAdmin(DefaultUserAdmin):
     pass
 
+
 @admin.register(Movie)
 class MovieAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'genre', 'year', 'created_date', 'updated_date']
-    fields = ['id', 'title', 'genre', 'year', 'created_date', 'updated_date']
-    readonly_fields = ['id', 'created_date', 'updated_date']
+    list_display = ["id", "title", "genre", "year", "created_date", "updated_date"]
+    fields = ["id", "title", "genre", "year", "created_date", "updated_date"]
+    readonly_fields = ["id", "created_date", "updated_date"]

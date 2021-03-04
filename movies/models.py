@@ -1,5 +1,5 @@
-from django.db.models import Model, CharField, DateTimeField
 from django.contrib.auth.models import AbstractUser
+from django.db.models import CharField, DateTimeField, Model
 
 
 class CustomUser(AbstractUser):
@@ -14,4 +14,4 @@ class Movie(Model):
     updated_date = DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self.title}'
+        return f"{self.title}"
