@@ -167,20 +167,11 @@ def test_update_movie_incorrect_id(client):
 
 
 @pytest.mark.django_db
-def test_update_movie_invalid_json(client, add_movie):
-    """ Try to update movie with empty json. Check that response is 400 Bad Request. """
-    movie = add_movie(
-        title="Fear and Loathing in Las Vegas", genre="drama", year="1998"
-    )
-    url = reverse("movie-detail", kwargs={"pk": movie.pk})
-
-    response = client.put(url, {}, content_type="application/json")
-
-    assert response.status_code == status.HTTP_400_BAD_REQUEST
-
-
-@pytest.mark.django_db
-def test_update_movie_invalid_json_keys(client, add_movie):
+@pytest.mark.parametrize("payload, status_code", [
+    ({}, 400),
+    ({"title": "Fear and Loathing in Las Vegas", "year": 1998}, 400),
+])
+def test_update_movie_invalid_json_keys(client, add_movie, payload, status_code):
     """ Try to update movie with json that lacks one of required fields. Should return 400. """
     movie = add_movie(
         title="Fear and Loathing in Las Vegas", genre="drama", year="1998"
@@ -189,10 +180,7 @@ def test_update_movie_invalid_json_keys(client, add_movie):
 
     response = client.put(
         url,
-        {
-            "title": movie.title,
-            "year": movie.year,
-        },
+        payload,
         content_type="application/json",
     )
 
