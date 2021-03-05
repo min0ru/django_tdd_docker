@@ -50,7 +50,7 @@ deploy:
   script:
     - apk add --no-cache curl
     - docker pull $IMAGE:latest
-    - docker -t $IMAGE:latest $HEROKU_REGISTRY_IMAGE
+    - docker tag $IMAGE:latest $HEROKU_REGISTRY_IMAGE
     - docker login -u _ -p $HEROKU_AUTH_TOKEN registry.heroku.com
     - docker push $HEROKU_REGISTRY_IMAGE
     - chmod +x ./release.sh
