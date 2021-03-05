@@ -170,8 +170,8 @@ def test_update_movie_incorrect_id(client):
 @pytest.mark.parametrize(
     "payload, status_code",
     [
-        ({}, 400),
-        ({"title": "Fear and Loathing in Las Vegas", "year": 1998}, 400),
+        [{}, 400],
+        [{"title": "Fear and Loathing in Las Vegas", "year": 1998}, 400],
     ],
 )
 def test_update_movie_invalid_json_keys(client, add_movie, payload, status_code):
