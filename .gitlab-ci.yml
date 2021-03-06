@@ -40,6 +40,7 @@ test:
     - pipenv run flake8 .
     - pipenv run black --check .
     - pipenv run isort . --check-only
+    - python manage.py check --deploy --fail-level=WARNING
 
 deploy:
   stage: deploy
