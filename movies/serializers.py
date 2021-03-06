@@ -1,10 +1,10 @@
-from rest_framework import serializers
+from rest_framework.serializers import ALL_FIELDS, ModelSerializer
 
 from .models import Movie
 
 
-class MovieSerializer(serializers.ModelSerializer):
+class MovieSerializer(ModelSerializer):
     class Meta:
         model = Movie
-        fields = "__all__"
+        fields = ALL_FIELDS
         read_only_fields = ["id", "created_date", "updated_date"]
