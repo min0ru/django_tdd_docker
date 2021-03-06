@@ -36,10 +36,10 @@ test:
     DATABASE_TEST_URL: postgres://runner:runner@postgres:5432/users
   script:
     - pipenv install --dev
-    - pytest -p no:warnings --cov
-    - flake8 .
-    - black --check .
-    - isort . --check-only
+    - pipenv run pytest -p no:warnings --cov
+    - pipenv run flake8 .
+    - pipenv run black --check .
+    - pipenv run isort . --check-only
 
 deploy:
   stage: deploy

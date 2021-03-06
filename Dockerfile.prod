@@ -19,7 +19,7 @@ COPY . .
 RUN python manage.py collectstatic --no-input
 
 # Non-root user (Heroku recommendation)
-RUN useradd gunicorn
+RUN useradd -m gunicorn
 USER gunicorn
 
 # $PORT environment variable is provided by Heroku
