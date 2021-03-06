@@ -26,9 +26,7 @@ def test_add_movie(client):
 def test_add_movie_invalid_json_empty(client):
     """ POST payload is not set. """
     assert Movie.objects.all().count() == 0
-    response = client.post(
-        reverse("movie-list"), dict(), content_type="application/json"
-    )
+    response = client.post(reverse("movie-list"), dict(), content_type="application/json")
     assert response.status_code == status.HTTP_400_BAD_REQUEST
     assert Movie.objects.all().count() == 0
 
@@ -92,9 +90,7 @@ def test_get_all_movies(client, add_movie):
 @pytest.mark.django_db
 def test_remove_movie(client, add_movie):
     """ Create movie, get movie, delete movie, check movies list is empty. """
-    movie = add_movie(
-        title="Fear and Loathing in Las Vegas", genre="drama", year="1998"
-    )
+    movie = add_movie(title="Fear and Loathing in Las Vegas", genre="drama", year="1998")
 
     url = reverse("movie-detail", kwargs={"pk": movie.pk})
 
@@ -123,9 +119,7 @@ def test_remove_movie_incorrect_id(client):
 @pytest.mark.django_db
 def test_update_movie(client, add_movie):
     """ Create movie, update with PUT, check returned info, check updated info with client. """
-    movie = add_movie(
-        title="Fear and Loathing in Las Vegas", genre="drama", year="1998"
-    )
+    movie = add_movie(title="Fear and Loathing in Las Vegas", genre="drama", year="1998")
     updated_genre = "comedy"
     url = reverse("movie-detail", kwargs={"pk": movie.pk})
     response = client.put(
@@ -176,9 +170,7 @@ def test_update_movie_incorrect_id(client):
 )
 def test_update_movie_invalid_json_keys(client, add_movie, payload, status_code):
     """ Try to update movie with json that lacks one of required fields. Should return 400. """
-    movie = add_movie(
-        title="Fear and Loathing in Las Vegas", genre="drama", year="1998"
-    )
+    movie = add_movie(title="Fear and Loathing in Las Vegas", genre="drama", year="1998")
     url = reverse("movie-detail", kwargs={"pk": movie.pk})
 
     response = client.put(
