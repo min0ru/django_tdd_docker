@@ -1,0 +1,6 @@
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "django_tdd_docker.settings"
+
+[tool.black]
+line-length = 100
+exclude = "migrations"
