@@ -18,6 +18,7 @@ pytest-cov = "*"
 black = "==20.8b1"
 isort = "*"
 flake9 = "*"
+pytest-xdist = "*"
 
 [requires]
 python_version = "3.9.1"
