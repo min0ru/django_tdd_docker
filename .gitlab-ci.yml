@@ -36,9 +36,9 @@ test:
     DATABASE_TEST_URL: postgres://runner:runner@postgres:5432/users
   script:
     - pytest -p no:warnings --cov
-    - flake8
+    - flake8 .
     - black --check --exclude=migrations .
-    - isort --check-only
+    - isort . --check-only
 
 deploy:
   stage: deploy
