@@ -1,6 +1,19 @@
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "django_tdd_docker.settings"
 
+[tool.coverage.run]
+branch = true
+omit = [
+    "*apps.py",
+    "*settings.py",
+    "*urls.py",
+    "*wsgi.py",
+    "*asgi.py",
+    "manage.py",
+    "*migrations/*",
+    "*tests/*",
+]
+
 [tool.black]
 line-length = 100
 exclude = "migrations"
