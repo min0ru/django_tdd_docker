@@ -1,8 +1,11 @@
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "django_tdd_docker.settings"
+cache_dir = "/tmp/.pytest_cache"
 
 [tool.coverage.run]
 branch = true
+data_file = "/tmp/.coverage"
+source = ["."]
 omit = [
     "*apps.py",
     "*settings.py",
