@@ -34,7 +34,7 @@ test:
     POSTGRES_USER: runner
     POSTGRES_PASSWORD: runner
     DATABASE_TEST_URL: postgres://runner:runner@postgres:5432/users
-    DEBUG: 1
+    SECURE_SSL_REDIRECT: 0
   script:
     - pipenv install --dev
     - pipenv run pytest -p no:warnings --cov
