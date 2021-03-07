@@ -22,3 +22,6 @@ pytest-xdist = "*"
 
 [requires]
 python_version = "3.9.1"
+
+[dev-packages.coverage]
+extras = [ "toml",]
