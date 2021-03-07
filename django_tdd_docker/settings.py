@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "drf_yasg",
     "movies.apps.MoviesConfig",
 ]
 
@@ -140,9 +141,6 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # Custom User model for authorization
 AUTH_USER_MODEL = "movies.CustomUser"
 
-# Disable Browsable API for production
-if not DEBUG:
-    REST_FRAMEWORK = {"DEFAULT_RENDERER_CLASSES": ("rest_framework.renderers.JSONRenderer",)}
 
 # Security settings
 if not DEBUG:
@@ -157,3 +155,17 @@ if not DEBUG:
     SECURE_HSTS_PRELOAD = True
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
     SECURE_REFERRER_POLICY = "same-origin"
+
+# Swagger
+SWAGGER_SETTINGS = {
+    "USE_SESSION_AUTH": False,
+}
+
+# Django Rest Framework API Doc settings
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
+}
+
+# Disable Browsable API for production
+if not DEBUG:
+    REST_FRAMEWORK["DEFAULT_RENDERER_CLASSES"] = ("rest_framework.renderers.JSONRenderer",)

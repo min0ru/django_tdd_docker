@@ -8,6 +8,7 @@ ENV DEBUG 0
 ENV SECRET_KEY ENVIRONMENT_VALUE
 
 RUN pip install --upgrade pip
+RUN pip install --upgrade setuptools
 RUN pip install pipenv
 
 COPY ./Pipfile .

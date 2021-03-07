@@ -10,6 +10,7 @@ RUN apt-get update -y && \
     apt-get clean
 
 RUN pip install --upgrade pip
+RUN pip install --upgrade setuptools
 RUN pip install pipenv
 
 COPY ./Pipfile .
