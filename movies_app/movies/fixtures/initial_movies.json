@@ -1,0 +1,35 @@
+[
+{
+    "model": "movies.movie",
+    "pk": 1,
+    "fields": {
+        "title": "Fargo",
+        "genre": "comedy",
+        "year": "1996",
+        "created_date": "2021-03-03T20:14:46.944Z",
+        "updated_date": "2021-03-03T20:14:46.944Z"
+    }
+},
+{
+    "model": "movies.movie",
+    "pk": 2,
+    "fields": {
+        "title": "The Dark Knight",
+        "genre": "action",
+        "year": "2008",
+        "created_date": "2021-03-03T20:18:05.409Z",
+        "updated_date": "2021-03-03T20:18:05.409Z"
+    }
+},
+{
+    "model": "movies.movie",
+    "pk": 3,
+    "fields": {
+        "title": "Solaris",
+        "genre": "sci-fi",
+        "year": "1972",
+        "created_date": "2021-03-03T20:39:19.571Z",
+        "updated_date": "2021-03-03T20:39:19.571Z"
+    }
+}
+]

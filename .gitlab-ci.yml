@@ -20,8 +20,8 @@ build:
     - docker build
         --cache-from $IMAGE:latest
         --tag $IMAGE:latest
-        --file ./Dockerfile.prod
-        "."
+        --file movies_app/Dockerfile.prod
+        "movies_app/"
     - docker push $IMAGE:latest
 
 test:
