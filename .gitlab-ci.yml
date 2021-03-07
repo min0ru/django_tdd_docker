@@ -35,6 +35,7 @@ test:
     POSTGRES_PASSWORD: runner
     DATABASE_TEST_URL: postgres://runner:runner@postgres:5432/users
   script:
+    - cd movies_app
     - pipenv install --dev
     - SECURE_SSL_REDIRECT=0 pipenv run pytest -p no:warnings --cov
     - pipenv run flake8 .
