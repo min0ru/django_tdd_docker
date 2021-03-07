@@ -34,10 +34,9 @@ test:
     POSTGRES_USER: runner
     POSTGRES_PASSWORD: runner
     DATABASE_TEST_URL: postgres://runner:runner@postgres:5432/users
-    SECURE_SSL_REDIRECT: 0
   script:
     - pipenv install --dev
-    - pipenv run pytest -p no:warnings --cov
+    - SECURE_SSL_REDIRECT=0 pipenv run pytest -p no:warnings --cov
     - pipenv run flake8 .
     - pipenv run black --check .
     - pipenv run isort . --check-only
